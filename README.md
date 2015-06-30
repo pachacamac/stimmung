@@ -32,7 +32,9 @@ The German dictionary is based on SentiWS.
 
 SentiWS is licensed under a Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported License (http://creativecommons.org/licenses/by-nc-sa/3.0/).
 
-The latest version of SentiWS can be found at http://wortschatz.informatik.uni-leipzig.de/download/.
+The latest version of SentiWS can be found at http://wortschatz.informatik.uni-leipzig.de/download/
+
+You can use the crude importer script to import new files in case there is a new version. Hey why don't you open an issue or make a pull request when that happens too? It would be appreciated :)
 
 ## Installation
 
