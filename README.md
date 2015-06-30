@@ -19,8 +19,10 @@ stimmung = Stimmung.new('my_dict1.txt', 'my_dict2.txt', '...')
 stimmung.load_dictionary('my_dict.txt')
 
 # and to get an analysis you just do
-stimmung.score('irgendein doofer text')
-# => 0.666
+stimmung.score('irgendein toller text')
+# => 0.5066 
+
+# this score will be between -1 (super negative) and 1 (super positive)
 
 ```
 
