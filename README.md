@@ -2,7 +2,7 @@
 
 Simple sentiment analysis for the German language
 
-[![Gem Version](https://badge.fury.io/rb/stimmung.svg)](http://badge.fury.io/rb/stimmung) ![Installs](http://img.shields.io/gem/dt/stimmung.svg) [![security](https://hakiri.io/github/pachacamac/stimmung/master.svg)](https://hakiri.io/github/pachacamac/stimmung/master)
+[![Gem Version](https://badge.fury.io/rb/stimmung.svg)](http://badge.fury.io/rb/stimmung) ![Installs](http://img.shields.io/gem/dt/stimmung.svg)
 
 
 ## Usage
