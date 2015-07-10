@@ -27,6 +27,12 @@ describe Stimmung do
       expect(@stimmung.score('ich hasse dummes beschissenes wetter')).to eq(-0.9388000000000001)
     end
 
+    context 'when passed a string containing non-letter characters' do
+      it 'strips out those characters' do
+        expect(stimmung.score('Das;;ist;;sehr;;traurig;;')).to eq(stimmung.score('Das ist sehr traurig'))
+      end
+    end
+
   end
 
 end
