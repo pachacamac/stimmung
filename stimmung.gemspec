@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name         = "stimmung"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.date         = Date.today
   s.summary      = "Simple German sentiment analysis"
   s.description  = "Sentiment analysis for the German language"
