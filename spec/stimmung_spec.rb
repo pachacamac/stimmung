@@ -6,7 +6,14 @@ describe Stimmung do
     @stimmung = Stimmung.new
   end
 
-  describe "#score" do
+  describe '#initialize' do
+    it "can load other dictionaries" do
+      s = Stimmung.new(File.join(File.dirname(__FILE__), '..', 'lib', 'emoticons.txt'))
+      expect(s.words.size).to eq(55)
+    end
+  end
+
+  describe '#score' do
 
     it "returns a score of 0.9037 when passed 'hervorragender test, ausgezeichnete stimmung'" do
       expect(@stimmung.score('hervorragender test, ausgezeichnete stimmung')).to eq(0.9037)

@@ -6,7 +6,7 @@ class Stimmung
     if dicts.empty?
       load_dictionary(File.join(File.dirname(__FILE__), 'emoticons.txt'), File.join(File.dirname(__FILE__), 'german.txt'))
     else
-      load_dictionary(dicts)
+      load_dictionary(*dicts)
     end
   end
 
