@@ -1,13 +1,14 @@
+Encoding.default_external = Encoding::UTF_8
+Encoding.default_internal = Encoding::UTF_8
+
 class Stimmung
   attr_accessor :words
 
   def initialize(*dicts)
     @words = Hash.new(0.0)
-    if dicts.empty?
-      load_dictionary(File.join(File.dirname(__FILE__), 'emoticons.txt'), File.join(File.dirname(__FILE__), 'german.txt'))
-    else
-      load_dictionary(*dicts)
-    end
+    directory = File.dirname(__FILE__)
+    dicts = %w(emoticons.txt german.txt).map! {|file| File.join(directory, file)} if dicts.empty?
+    load_dictionary(*dicts)
   end
 
   def score(str)
@@ -16,9 +17,9 @@ class Stimmung
 
   def load_dictionary(*files)
     files.each do |file|
-      File.readlines(file).each do |line|
-        score, text = line.chomp.split(/\s/)
-        @words[text] = score.to_f
+      File.foreach(file) do |line|
+        score, text = line.chomp!.split
+        @words[text.freeze] = score.to_f
       end
     end
   end
