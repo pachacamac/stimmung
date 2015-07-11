@@ -11,14 +11,14 @@ class Stimmung
   end
 
   def score(str)
-    str.downcase.split(/\W+/).reduce(0.0) {|s,e| s += @words[e]}
+    str.downcase.gsub(/(\w{3,})(\W+?)(?=\s|$)/, '\1').split.reduce(0.0) {|s,e| s += @words[e]}
   end
 
   def load_dictionary(*files)
     files.each do |file|
       File.foreach(file) do |line|
         score, text = line.chomp!.split
-        @words[text.freeze] = score.to_f
+        @words[text.downcase.freeze] = score.to_f
       end
     end
   end
