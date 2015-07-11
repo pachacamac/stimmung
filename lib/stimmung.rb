@@ -11,7 +11,7 @@ class Stimmung
   end
 
   def score(str)
-    str.downcase.gsub(/(\w{3,})(\W+?)(?=\s|$)/, '\1').split.reduce(0.0) {|s,e| s += @words[e]}
+    str.downcase.gsub(/(\w{3,})(\W)(?=\s|$)/, '\1').split(/\s|\b(?=\W)/).reduce(0.0) {|s,e| s += @words[e]}
   end
 
   def load_dictionary(*files)
