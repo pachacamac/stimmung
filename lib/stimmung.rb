@@ -16,7 +16,7 @@ class Stimmung
 
   def load_dictionary(*files)
     files.each do |file|
-      File.foreach(file) do |line|
+      File.foreach(file, :encoding => 'UTF-8') do |line|
         score, text = line.chomp!.split
         @words[text.downcase.freeze] = score.to_f
       end
