@@ -1,4 +1,4 @@
-#<Encoding:UTF-8>
+#encoding: utf-8
 
 class Stimmung
   attr_accessor :words
